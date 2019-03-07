@@ -150,6 +150,7 @@ var buildfire = {
         , "services.publicFiles._triggerOnProgress"
         , "services.publicFiles._triggerOnComplete"
         , "notes.triggerOnSeekTo"
+        , "bookmarks.triggerOnUpdate"
     ]
     , _postMessageHandler: function (e) {
         if (e.source === window) {
@@ -1677,7 +1678,13 @@ var buildfire = {
         delete: function(options, callback) {
             var p = new Packet(null, 'bookmarkAPI.deleteFromPlugin', options);
             buildfire._sendPacket(p, callback);
-        }
+        },
+        onUpdate: function (callback) {
+            return buildfire.eventManager.add('bookmarks.onUpdate', callback, false);
+        },
+        triggerOnUpdate: function (user) {
+            buildfire.eventManager.trigger('bookmarks.onUpdate');
+        },
     }
     /// ref: https://github.com/BuildFire/sdk/wiki/How-to-use-action-Items
     /// also https://github.com/BuildFire/sdk/wiki/BuildFire-Action-Items-Component

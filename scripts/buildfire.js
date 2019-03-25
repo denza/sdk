@@ -152,7 +152,7 @@ var buildfire = {
         , "notes.triggerOnSeekTo"
     ]
     , _postMessageHandler: function (e) {
-        if (e.source === window) {
+        if (e.source === window || !e.data || !e.data.cmd) {
             console.log(' >>>> IGNORE MESSAGE <<<< ');
             return;
         }//e.origin != "null"
@@ -183,8 +183,7 @@ var buildfire = {
 
         }
         else {
-            console.warn(window.location.href + ' unhandled packet', packet);
-            //alert('parent sent: ' + packet.data);
+            return;
         }
     }
     //, _resendAttempts:0
@@ -1667,7 +1666,10 @@ var buildfire = {
         },
         get: function(callback) {
             var param = buildfire.bookmarks._getParameterByName('bookmarkPayload');
-            var bookmark = JSON.parse(param);
+            var bookmark = {};
+            if (param) {
+                bookmark = JSON.parse(param);
+            }
             callback(null, bookmark);
         },
         getAll: function(callback) {

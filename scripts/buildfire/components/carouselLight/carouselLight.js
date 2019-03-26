@@ -32,6 +32,7 @@ if (typeof (buildfire.components.carousel) == "undefined")
         style.innerHTML += " .loryFrame {position: relative;font-size: 0; line-height: 0; overflow: hidden; white-space: nowrap;}";
         style.innerHTML += " .loryFrame li { position: relative; display: inline-block; height: 100%;}";
         style.innerHTML += " .lorySlides { display: inline-block;}";
+        style.innerHTML += " .js_slide > img { width: 100%;}";
         style.innerHTML += " .loryPercentage .lorySlides { display: block; padding: 0px;}";
         style.innerHTML += " .loryPercentage li {  width: 100%;}";
 

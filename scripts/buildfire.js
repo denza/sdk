@@ -1430,6 +1430,11 @@ var buildfire = {
             var root;
             var ratio = window.devicePixelRatio;
             if(options && options.disablePixelRatio)ratio = options.disablePixelRatio ;
+            
+            // Prevent downscaling if ratio falls below 1.
+            if (ratio < 1) {
+                ratio = 1;
+            }
 /*
             if(buildfire.imageLib.isProdImageServer(url)){
                 url = url.replace(/^https:\/\//i, 'http://');

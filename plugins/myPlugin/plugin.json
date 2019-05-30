@@ -1,7 +1,7 @@
 {
-  "author":"Daniel Hindi"
-,"pluginName":"Hello World"
-,"pluginDescription":"Bare bones plugin showing simple autonomy of a plugin"
+  "author":"taras kovtun"
+,"pluginName":"try data"
+,"pluginDescription":"datasource"
 ,"supportEmail":"devSupport@buildfire.com"
 ,"control":{
   "content":{

@@ -208,7 +208,7 @@ $app.controller('shellCtrl', ['$rootScope', '$scope', '$routeParams', '$sce', '$
 
         $scope.init = function () {
             var pluginFolder = $routeParams.pluginFolder;
-            if (!pluginFolder) pluginFolder = window.appContext.currentPlugin.pluginPath;
+            if (!pluginFolder) pluginFolder = window.appContext.currentPlugin.pluginName;
 
             var xmlhttp = new XMLHttpRequest();
             var url = '../plugins/' + pluginFolder + "/plugin.json";

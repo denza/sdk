@@ -38,7 +38,8 @@
     else
         hash="myPlugin";
 
-    window.appContext.currentPlugin.pluginPath = hash;
+    window.appContext.currentPlugin.pluginPath = window.appContext.currentPlugin.pluginId;
+    window.appContext.currentPlugin.pluginName = hash;
 
 
 
